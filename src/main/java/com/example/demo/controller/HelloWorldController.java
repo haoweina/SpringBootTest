@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+/*Rest端点*/
 /*
 * @RestController 相当于 @ResponseBody + @Controller
 * 如果只是使用@RestController 注解controller，则Controller中的方法无法返回jsp页面，

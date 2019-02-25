@@ -1,0 +1,15 @@
+spring:
+    application:
+        name: demoservice
+    server:
+port: 9090
+
+#文件日志输出
+#文件将在达到10MB 后自动旋转生成
+#日志级别
+    logging:
+        path: /var/tmp/
+        file: /var/temp/mylog.log
+        level:
+            root: WARN
+

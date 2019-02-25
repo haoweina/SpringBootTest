@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!--配置控制台 appender-->
+	<appender name = "STDOUT" calss="ch.qos.logback.core.ConsoleAppender">
+	</appender>
+	<root level="INFO">
+		<appender-ref ref = "STDOUT"/>
+	</root>
+
+	<appender name = "FILE" calss = "ch.qos.logback.core.FileAppender">
+		<File>/var/tmp/mylog.log</File>
+	</appender>
+	<root level = "INFO">
+		<appender-ref ref = "FILE"/>
+	</root>
+</configuration>
