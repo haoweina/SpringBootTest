@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<!--Logback是由log4j创始人设计的另一个开源日志组件-->
+<!--基本结构-->
+<!--以<configuration> 开头，后面有零个或者多个<appender> 元素，
+	有零个或多个<logger>元素，有最多一个<root>元素-->
+<configuration debug="false">
+	<!--appender 负责写日志的组件，它有两个必要的属性 name和class,name指定appender名称，class指定appender的全限定名-->
 	<!--配置控制台 appender-->
 	<appender name = "STDOUT" calss="ch.qos.logback.core.ConsoleAppender">
+		<!--对日志格式化-->
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.sss'Z'}] [%C] [%t] [%L] [%-5p] %m%n</pattern>
+		</encoder>
 	</appender>
-	<root level="INFO">
-		<appender-ref ref = "STDOUT"/>
-	</root>
 
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+<!--FileAppender：把日志添加到文件-->
 	<appender name = "FILE" calss = "ch.qos.logback.core.FileAppender">
 		<File>/var/tmp/mylog.log</File>
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.sss'Z'}] [%C] [%t] [%L] [%-5p] %m%n</pattern>
+		</encoder>
 	</appender>
+
 	<root level = "INFO">
 		<appender-ref ref = "FILE"/>
+		<appender-ref ref = "STDOUT"/>
 	</root>
 </configuration>

@@ -1,20 +1,15 @@
-package com.example.demo;
+package com.example;
 
-import java.util.concurrent.TimeUnit;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 /*
 * 测试入口
 * */
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class ApplicationTests {
+/*@RunWith(SpringRunner.class)
+@SpringBootTest*/
+/*public class ApplicationTests {
 
 	@Test
 	public void contextLoads() {
-	}
+	}*/
 
 	/*
 	* JUnit中的注解
@@ -29,18 +24,18 @@ public class ApplicationTests {
 	/*
 	* 超时测试
 	* */
-	@Test(timeout = 5000)
+	/*@Test(timeout = 5000)
 	public void timeOutTest() throws InterruptedException {
 		TimeUnit.SECONDS.sleep(2);
 		System.out.println("****************Complate*****************");
-	}
+	}*/
 
 	/*
 	* 异常测试
 	* expected 参数和 @Test 注释一起使用
 	* */
-	@Test(expected = NullPointerException.class)
+	/*@Test(expected = NullPointerException.class)
 	public void nullExceptionTest() {
 		throw new NullPointerException();
-	}
-}
+	}*/
+//}/**/

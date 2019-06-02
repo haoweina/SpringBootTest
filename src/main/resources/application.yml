@@ -1,8 +1,14 @@
 spring:
-    application:
-        name: demoservice
-    server:
-port: 9090
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&useSSL=false
+      username: root
+      password: root
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+
 
 #文件日志输出
 #文件将在达到10MB 后自动旋转生成
