@@ -2,9 +2,7 @@ package com.example;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // 用于做一些框架的配置
 // Spring启动应用程序的入口点
@@ -14,15 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 * 如果将@SpringBootApplication批注添加到类中，则无需添加@EnableAutoConfiguration，@ComponentScan和@SpringBootConfiguration批注。
 * @SpringBootApplication注释包括所有其他注释。
 * Spring Boot应用程序在初始化时扫描所有bean和包声明，需要为类文件添加@ComponentScan批注，以扫描项目中添加的组件。*/
-@RestController
-@EnableAutoConfiguration
-@MapperScan(basePackages = "com.stone.mapper")
+@SpringBootApplication
+@MapperScan(basePackages = "com.example.dao")
 public class Application {
-
-	@RequestMapping("/home")
-	String home() {
-		return "Hello World!";
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
