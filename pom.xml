@@ -40,6 +40,11 @@
 			<version>2.1.0.RELEASE</version>
 		</dependency>
 		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<version>2.1.5.RELEASE</version>
@@ -98,9 +103,60 @@
 			<artifactId>druid-spring-boot-starter</artifactId>
 			<version>1.1.10</version>
 		</dependency>
+		<!-- 添加fastjson对json串的处理 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.60</version>
+		</dependency>
+		<!-- springBoot与mybatis的整合 -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper-spring-boot-starter</artifactId>
+			<version>${mapper.starter.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
+		<!-- 打包项目名称 -->
+		<finalName>${project.artifactId}</finalName>
+		<!--使用的插件列表-->
 		<plugins>
+			<!-- plugin元素包含描述插件所需要的信息 -->
+			<!-- 使用generator插件自动生成相关文件 -->
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.6</version>
+				<!-- 扩展配置项 -->
+				<configuration>
+					<!-- MyBaits-generator的配置文件generatorConfig.xml的位置 -->
+					<configurationFile>${pom.basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+					<!-- 是否覆盖同名文件（只是针对XML文件,java文件生成类似*.java.1、*.java.2形式的文件）-->
+					<overwrite>true</overwrite>
+					<!-- 是否将生成过程输出至控制台 -->
+					<verbose>true</verbose>
+				</configuration>
+				<!-- 项目引入插件所需要的额外依赖 -->
+				<dependencies>
+					<!-- mysql的连接依赖 -->
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>5.1.47</version>
+					</dependency>
+					<dependency>
+						<groupId>tk.mybatis</groupId>
+						<artifactId>mapper-generator</artifactId>
+						<version>1.0.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<!--编码和编译JDK版本-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -108,6 +164,7 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<encoding>utf8</encoding>
 				</configuration>
 			</plugin>
 		</plugins>
