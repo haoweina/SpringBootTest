@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.stone.mapper.UserBeanMapper">
-  <resultMap id="BaseResultMap" type="com.stone.model.dic.UserBean">
+  <resultMap id="BaseResultMap" type="com.stone.model.bean.UserBean">
     <!--
       WARNING - @mbg.generated
     -->
@@ -13,4 +13,8 @@
     <result column="car_number" jdbcType="VARCHAR" property="carNumber" />
     <result column="address" jdbcType="VARCHAR" property="address" />
   </resultMap>
+
+  <select id="getUserByName" resultType="com.stone.model.dic.UserBean" parameterType="string">
+    select * from system_user where phoneNumber = #{name}
+  </select>
 </mapper>

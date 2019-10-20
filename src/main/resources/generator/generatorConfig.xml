@@ -29,7 +29,7 @@
 		<javaClientGenerator targetPackage="com.stone.mapper" targetProject="src/main/java"
 			type="XMLMAPPER"/>
 
-		<table tableName="sys_user" domainObjectName="UserBean" >
+		<table tableName="parking_record" domainObjectName="ParkingRecord" >
 			<!--mysql 配置-->
 			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
 		</table>
