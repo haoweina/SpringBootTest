@@ -37,6 +37,18 @@ public class OrderRecord {
 	private int paringId;
 
 	/*
+	* 预约的停车场名字
+	* */
+	@Column(name = "parking_name")
+	private int parkingName;
+
+	/*
+	 * 预约的停车场地址
+	 * */
+	@Column(name = "parking_address")
+	private int parkingAddress;
+
+	/*
 	* 预约状态
 	* 0：取消预约，1： 预约
 	* */

@@ -6,6 +6,6 @@ public interface UserService {
 
 	int addUser(UserBean user, boolean isSave);
 
-	UserBean getUserByName(String name);
+	UserBean getUserByName(String name, String pwd);
 
 }

@@ -33,8 +33,8 @@ public class UserController {
 	* 用户登录
 	* */
 	@GetMapping("/userLogin")
-	public JSONObject userLogin(@RequestParam String userName) {
-		UserBean user = userService.getUserByName(userName);
+	public JSONObject userLogin(@RequestParam String userName, @RequestParam String pwd) {
+		UserBean user = userService.getUserByName(userName, pwd);
 		return user != null ? ReturnJSONUtils.successJson(user) : ReturnJSONUtils.errorJson(ErrorEnum.E_10009);
 	}
 
