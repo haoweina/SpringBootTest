@@ -1,8 +1,8 @@
 package com.stone;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import tk.mybatis.spring.annotation.MapperScan;
 
 // 用于做一些框架的配置
 // Spring启动应用程序的入口点

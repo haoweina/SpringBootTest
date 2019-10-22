@@ -16,7 +16,7 @@ public class ParkingLot {
 	 * 主键
 	 */
 	@Id
-	private int id;
+	private Integer id;
 	/**
 	 * 名称
 	 */
@@ -38,6 +38,6 @@ public class ParkingLot {
 	 * 剩余空位个数
 	 */
 	@Column(name = "remaining_count")
-	private int remainingCount;
+	private Integer remainingCount;
 
 }

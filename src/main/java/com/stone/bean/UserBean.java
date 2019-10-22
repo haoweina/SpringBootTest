@@ -15,7 +15,7 @@ public class UserBean {
 	 * 主键
 	 */
 	@Id
-	private int id;
+	private Integer id;
 
 	/**
 	 * 密码
@@ -29,7 +29,7 @@ public class UserBean {
 	/**
 	 * 年龄
 	 */
-	private int age;
+	private Integer age;
 	/**
 	 * 手机号/登录名
 	 */

@@ -17,7 +17,7 @@ public class OrderRecord {
 	 * 主键
 	 */
 	@Id
-	private int id;
+	private Integer id;
 	/**
 	 * 车主名字
 	 */
@@ -34,19 +34,19 @@ public class OrderRecord {
 	 * 预约的停车场id
 	 */
 	@Column(name = "parking_id")
-	private int paringId;
+	private Integer paringId;
 
 	/*
 	* 预约的停车场名字
 	* */
 	@Column(name = "parking_name")
-	private int parkingName;
+	private Integer parkingName;
 
 	/*
 	 * 预约的停车场地址
 	 * */
 	@Column(name = "parking_address")
-	private int parkingAddress;
+	private Integer parkingAddress;
 
 	/*
 	* 预约状态

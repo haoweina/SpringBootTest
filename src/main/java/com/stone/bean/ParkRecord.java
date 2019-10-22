@@ -17,7 +17,7 @@ public class ParkRecord {
 	* 主键
 	* */
 	@Id
-	private int id;
+	private Integer id;
 	/**
 	 * 停车场名称
 	 */
@@ -48,7 +48,7 @@ public class ParkRecord {
 	 * 用户主键
 	 * */
 	@Column(name="user_id")
-	private int userId;
+	private Integer userId;
 	/*
 	* 用户姓名
 	* */
