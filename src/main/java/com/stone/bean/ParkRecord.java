@@ -26,7 +26,7 @@ public class ParkRecord {
 	/**
 	 * 日期
 	 */
-	@Column(name="park_dame")
+	@Column(name="park_date")
 	private String parkDate;
 	/**
 	 * 开始时间

@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
 	public UserBean getUserByName(String name, String pwd) {
 		Example example = new Example(UserBean.class);
 		example.createCriteria().andEqualTo("phoneNumber", name).andEqualTo("pwd", pwd);
-		UserBean user = userMapper.getUserByName(name);
+		UserBean user = userMapper.selectOneByExample(name);
 		if (user != null) {
 			return user;
 		}
