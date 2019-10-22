@@ -33,7 +33,7 @@ public class OrderRecordController {
     * 根据用户名查询预约记录
     * */
     @GetMapping("/getRrecord")
-    public List<OrderRecord> getRrecord(@RequestParam String userName) {
-        return orderRecordService.getRecord(userName);
+    public JSONObject getRrecord(@RequestParam String userName) {
+        return ReturnJSONUtils.successJson(orderRecordService.getRecord(userName));
     }
 }

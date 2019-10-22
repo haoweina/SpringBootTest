@@ -1,9 +1,11 @@
 package com.stone.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.stone.bean.OrderRecord;
 import com.stone.bean.ParkingLot;
 import com.stone.service.OrderRecordService;
 import com.stone.service.ParkingLotService;
+import com.stone.util.ReturnJSONUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +24,7 @@ public class ParkingLotController {
      * 根据用户名查询预约记录
      * */
     @GetMapping("/getAllList")
-    public List<ParkingLot> getAllList() {
-        return parkingLotService.getAllList();
+    public JSONObject getAllList() {
+        return ReturnJSONUtils.successJson(parkingLotService.getAllList());
     }
 }
