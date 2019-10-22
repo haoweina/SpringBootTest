@@ -14,7 +14,4 @@
     <result column="address" jdbcType="VARCHAR" property="address" />
   </resultMap>
 
-  <select id="getUserByName" resultType="com.stone.model.dic.UserBean" parameterType="string">
-    select * from system_user where phoneNumber = #{name}
-  </select>
 </mapper>
