@@ -18,8 +18,10 @@ public class OrderRecordServiceImpl implements OrderRecordService{
     public int addRecord(OrderRecord orderRecord, boolean isSave) {
         int flag = 0;
         if (isSave) {
+            orderRecord.setStatus("1");
             flag = orderRecordMapper.insertUseGeneratedKeys(orderRecord);
         } else {
+            orderRecord.setStatus("0");
             flag = orderRecordMapper.updateByPrimaryKeySelective(orderRecord);
         }
         return flag;

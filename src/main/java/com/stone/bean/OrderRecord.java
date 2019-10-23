@@ -40,13 +40,13 @@ public class OrderRecord {
 	* 预约的停车场名字
 	* */
 	@Column(name = "parking_name")
-	private Integer parkingName;
+	private String parkingName;
 
 	/*
 	 * 预约的停车场地址
 	 * */
 	@Column(name = "parking_address")
-	private Integer parkingAddress;
+	private String parkingAddress;
 
 	/*
 	* 预约状态
