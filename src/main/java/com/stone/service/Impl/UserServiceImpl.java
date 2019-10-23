@@ -25,9 +25,11 @@ public class UserServiceImpl implements UserService {
 			Example example = new Example(UserBean.class);
 			example.createCriteria().andEqualTo("phoneNumber", user.getPhoneNumber());
 			UserBean user1 = userMapper.selectOneByExample(example);
-			// 用户已注册
 			if (user1 == null) {
 				flag = userMapper.insertUseGeneratedKeys(user);
+			} else {
+				// 用户已注册
+				return retFlag;
 			}
 		} else {
 			flag = userMapper.updateByPrimaryKey(user);

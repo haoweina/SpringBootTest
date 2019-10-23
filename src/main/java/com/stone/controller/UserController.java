@@ -26,7 +26,7 @@ public class UserController {
 		boolean isSave = requestJson.getBoolean("isSave");
 		int flag = userService.addUser(user, isSave);
 		// flag: 0----用户已注册，1----保存成功，2----保存失败
-		return flag == 0 ? ReturnJSONUtils.errorJson(ErrorEnum.E_10008): (flag > 0 ? ReturnJSONUtils.successJson() : ReturnJSONUtils.errorJson(ErrorEnum.E_400));
+		return flag == 0 ? ReturnJSONUtils.errorJson(ErrorEnum.E_10008): (flag == 1 ? ReturnJSONUtils.successJson() : ReturnJSONUtils.errorJson(ErrorEnum.E_400));
 	}
 
 	/*
