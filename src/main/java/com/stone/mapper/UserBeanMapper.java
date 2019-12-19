@@ -1,7 +1,8 @@
 package com.stone.mapper;
 
-import com.example.base.BaseMapper;
-import com.stone.model.dic.UserBean;
+
+import com.stone.base.BaseMapper;
+import com.stone.bean.UserBean;
 
 public interface UserBeanMapper extends BaseMapper<UserBean> {
 }
