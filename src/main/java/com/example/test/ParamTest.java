@@ -14,5 +14,6 @@ public class ParamTest {
 	public static void main(String[] args) {
 		int a = 10; // 实参
 		func(a);
+		System.out.println("执行后" + a);
 	}
 }
